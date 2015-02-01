@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UD1_DavidToba</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_alta_persoas">AltaPersoas</string>
+    <string name="title_activity_nome_persoas">NomePersoas</string>
+
+</resources>
