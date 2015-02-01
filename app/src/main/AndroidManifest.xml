@@ -24,6 +24,10 @@
             android:name=".NomePersoas"
             android:label="@string/title_activity_nome_persoas" >
         </activity>
+        <activity
+            android:name=".Configuracion"
+            android:label="Configuracion" >
+        </activity>
     </application>
 
 </manifest>

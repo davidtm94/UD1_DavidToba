@@ -1,0 +1,18 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory
+        android:title="Escolle a ruta"
+        android:key="pref_key_storage_settings">
+    <EditTextPreference
+        android:id="@+id/edPreference"
+        android:key="ed_ruta"
+        android:title="Pincha aqui e escribe a ruta"
+        android:defaultValue="@string/ruta_defecto"
+        android:selectAllOnFocus="true"
+        android:capitalize="words"
+        android:singleLine="true"
+        android:maxLines="1" />
+</PreferenceCategory>
+
+</PreferenceScreen>

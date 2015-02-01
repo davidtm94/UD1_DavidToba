@@ -1,9 +1,14 @@
 package com.example.david.ud1_davidtoba;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class NomePersoas extends Activity {
@@ -31,9 +36,18 @@ public class NomePersoas extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(this, Configuracion.class);
+            startActivity(intent);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void aplicarPreferencias(View v) {
+        SharedPreferences preferencias = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String valorNome = preferencias.getString("ed_ruta", "non hay nada");
+        Button pr= (Button) findViewById(R.id.proba);
+        pr.setText(valorNome);
     }
 }
