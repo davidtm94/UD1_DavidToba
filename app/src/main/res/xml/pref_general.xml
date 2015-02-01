@@ -2,17 +2,22 @@
 
 
     <PreferenceCategory
-        android:title="Escolle a ruta"
-        android:key="pref_key_storage_settings">
-    <EditTextPreference
-        android:id="@+id/edPreference"
-        android:key="ed_ruta"
-        android:title="Pincha aqui e escribe a ruta"
-        android:defaultValue="@string/ruta_defecto"
-        android:selectAllOnFocus="true"
-        android:capitalize="words"
-        android:singleLine="true"
-        android:maxLines="1" />
-</PreferenceCategory>
+        android:key="pref_key_storage_settings"
+        android:title="Escolle a ruta">
+        <EditTextPreference
+            android:id="@+id/edPreference"
+            android:capitalize="words"
+            android:defaultValue="@string/ruta_defecto"
+            android:key="ed_ruta"
+            android:maxLines="1"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Pincha aqui e escribe a ruta" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="rut_def"
+            android:summary="Asigna a ruta por defecto"
+            android:title="Ruta por defecto" />
+    </PreferenceCategory>
 
 </PreferenceScreen>

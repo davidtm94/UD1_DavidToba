@@ -18,7 +18,17 @@
         android:layout_height="wrap_content"
         android:text="Gardar"
         android:id="@+id/btnGardar"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="104dp"
+        android:onClick="gardaArquivoTexto"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descricion"
+        android:id="@+id/tvDesc"
         android:layout_below="@+id/spin1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="62dp" />
+        android:layout_marginTop="92dp" />
 </RelativeLayout>

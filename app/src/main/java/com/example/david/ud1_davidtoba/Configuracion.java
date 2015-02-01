@@ -8,6 +8,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -39,16 +40,30 @@ public class Configuracion extends PreferenceActivity {
      * as a master/detail two-pane view on tablets. When true, a single pane is
      * shown on tablets.
      */
+    CheckBoxPreference chkbPref;
+    EditTextPreference edPreference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.pref_general);
-
+        //No caso de que o Checkbox estea marcado, poñemos a ruta por defecto
+        chkbPref=(CheckBoxPreference) findPreference("rut_def");
+        edPreference= (EditTextPreference) findPreference("ed_ruta");
+        if(chkbPref.isChecked()) edPreference.setText(getFilesDir().getAbsolutePath());
+        chkbPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                if(!chkbPref.isChecked()) return true;
+                edPreference.setText(getFilesDir().getAbsolutePath());
+                return true;
+            }
+        });
     }
 
     @Override
     protected void onDestroy() {
+        if(chkbPref.isChecked()) edPreference.setText(getFilesDir().getAbsolutePath());
         super.onDestroy();
     }
 }
