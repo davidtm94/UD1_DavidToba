@@ -27,7 +27,7 @@ import java.util.HashMap;
 
 import bbdd.ClaseBBDD;
 
-
+//Proba
 public class NomePersoas extends Activity {
     HashMap<String,String> hm;
     Spinner spin;
